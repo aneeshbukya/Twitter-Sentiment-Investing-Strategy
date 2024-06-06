@@ -1,80 +1,74 @@
-#Twitter Engagement Ratio Investment Strategy
+Twitter Sentiment Analysis Project
 
-Project Overview
+Overview
 
-This project aims to develop and backtest an investment strategy based on Twitter engagement ratios for various stocks. By analyzing Twitter comments and likes, the strategy identifies the top five stocks each month with the highest engagement ratios and constructs a portfolio based on these stocks. The performance of this portfolio is then compared against the NASDAQ-100 index (QQQ).
+The Twitter Sentiment Analysis Project is a Python-based project focused on analyzing sentiment data from Twitter. It involves cleaning the data, processing it to calculate engagement ratios of stocks mentioned on Twitter, and visualizing the results over time. This project aims to provide insights into how social media sentiment affects stock market trends.
 
-Data
+Features
 
-Input Data
-sentiment_data.csv: Contains Twitter sentiment data for various stocks, including the number of likes and comments.
-Output Data
-sentiment_data_new.csv: A cleaned version of sentiment_data.csv with rows containing the word "ATVI" removed.
-Steps to Execute the Project
+Data Cleaning: Removes rows containing specific keywords or phrases to ensure data accuracy.
+Data Processing and Analysis: Processes sentiment data, calculates engagement ratios, and filters out stocks with low engagement.
+Portfolio Construction: Constructs a portfolio based on top-ranked stocks by engagement ratio.
+Performance Evaluation: Compares the portfolio's performance to a benchmark index (NASDAQ-100) and plots cumulative returns over time.
+Installation
 
-Data Cleaning
+Clone the repository:
 
-Remove rows containing the word "ATVI" from sentiment_data.csv.
-Convert the date column to datetime format and set the date and symbol as the index.
-Calculate the engagement ratio as the number of Twitter comments divided by the number of Twitter likes.
-Filter out stocks with low engagement (less than 20 likes or 10 comments).
-Data Aggregation and Ranking
+bash
+Copy code
+git clone https://github.com/your-username/twitter-sentiment-project.git
+cd twitter-sentiment-project
+Install the required dependencies:
 
-Aggregate the data by month and symbol, calculating the mean engagement ratio for each group.
-Rank stocks within each month based on their engagement ratio.
-Filter the top 5 ranked stocks for each month.
-Portfolio Construction
-
-Identify unique dates and corresponding top-ranked stocks.
-Download stock price data using yfinance for the identified stocks.
-Calculate daily log returns for each stock.
-Construct a portfolio return series by averaging the returns of the top-ranked stocks each month.
-Benchmark Comparison
-
-Download NASDAQ-100 index data using yfinance.
-Calculate daily log returns for the NASDAQ-100 index.
-Merge portfolio returns with NASDAQ-100 returns for comparison.
-Calculate cumulative returns for both the portfolio and the NASDAQ-100 index.
-Visualization
-
-Plot cumulative returns of the portfolio and the NASDAQ-100 index over time.
-Dependencies
-
-pandas
-numpy
-matplotlib
-yfinance
-How to Run the Project
-
-Set up the environment:
-
-Ensure you have Python installed (preferably version 3.7 or higher).
-Install the required packages using pip:
-sh
+bash
 Copy code
 pip install pandas numpy matplotlib yfinance
-Run the Data Cleaning Script:
+Run the script:
 
-Execute the script to remove rows containing "ATVI" from the input data and save the cleaned data.
-sh
+bash
 Copy code
-python clean_data.py
-Run the Main Script:
+python sentiment_analysis.py
+Usage
 
-Execute the main script to perform the analysis and generate the plot.
-sh
+Data Cleaning:
+
+Modify the input_file_path and output_file_path variables in the script if needed.
+Run the script to clean the data and save it to the output file.
+Data Processing and Analysis:
+
+Ensure the cleaned data file is available.
+Run the script to process the data, calculate engagement ratios, and filter top-ranked stocks.
+Portfolio Construction and Performance Evaluation:
+
+Ensure internet access to download stock price data.
+Run the script to construct the portfolio, download index data, and visualize cumulative returns.
+Code Structure
+
+sentiment_analysis.py: Main script containing data processing and analysis logic.
+sentiment_data.csv: Input file containing the original sentiment data.
+sentiment_data_new.csv: Output file containing the cleaned sentiment data.
+Key Dependencies
+
+pandas: For data manipulation and analysis.
+numpy: For numerical operations.
+matplotlib: For plotting data.
+yfinance: For downloading stock price data.
+Contributing
+
+Fork the repository.
+Create a new branch for your feature or bugfix:
+bash
 Copy code
-python main.py
-Files
-
-clean_data.py: Script to remove rows containing "ATVI" from the input data.
-main.py: Main script that performs the data analysis, constructs the portfolio, and generates the plot.
-sentiment_data.csv: Input file containing raw sentiment data.
-sentiment_data_new.csv: Output file containing cleaned sentiment data.
-Results
-
-The project produces a plot showing the cumulative returns of the Twitter engagement ratio strategy compared to the NASDAQ-100 index. This visualization helps in evaluating the performance of the strategy over the specified period.
-
+git checkout -b feature-name
+Commit your changes:
+bash
+Copy code
+git commit -m 'Add some feature'
+Push to the branch:
+bash
+Copy code
+git push origin feature-name
+Create a new Pull Request.
 Contact
 
-For any queries or further information, please contact [Your Name] at [Your Email].
+For questions or suggestions, please contact Your Name.
