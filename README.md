@@ -10,7 +10,7 @@ The Twitter Sentiment Analysis Project is a Python-based project focused on anal
 4. **Performance Evaluation**: Compares the portfolio's performance to a benchmark index (NASDAQ-100) and plots cumulative returns over time.
 
 ## Output 
-![Performance Chart](performance_chart.png)
+![Performance Chart](performance.png)
 
 ## Installation
 
