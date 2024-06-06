@@ -72,4 +72,15 @@ portfolios_cumulative_return.plot(figsize=(16, 6))
 plt.title('Twitter Engagement Ratio Strategy Return Over Time')
 plt.gca().yaxis.set_major_formatter(mtick.PercentFormatter(1))
 plt.ylabel('Return')
+# Calculate and print performance comparison
+final_portfolio_return = portfolios_cumulative_return['portfolio_return'].iloc[-1]
+final_nasdaq_return = portfolios_cumulative_return['nasdaq_return'].iloc[-1]
+
+print(f"Final Cumulative Return of Twitter Engagement Ratio Strategy: {final_portfolio_return:.2%}")
+print(f"Final Cumulative Return of NASDAQ-100 Index: {final_nasdaq_return:.2%}")
+
+performance_diff = final_portfolio_return - final_nasdaq_return
+print(f"Performance Difference (Strategy - NASDAQ-100): {performance_diff:.2%}")
 plt.show()
+
+
