@@ -72,4 +72,4 @@ The Twitter Sentiment Analysis Project is a Python-based project focused on anal
 5. **Create a new Pull Request**.
 
 ## Contact
-For questions or suggestions, please contact [Your Name](mailto:your-email@example.com).
+For questions or suggestions, please contact [Aneesh Bukya](mailto:aneeshbsri@outlook.com).
